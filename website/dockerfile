@@ -1,0 +1,7 @@
+FROM httpd
+
+RUN apt-get update && apt-get install apache2
+
+COPY web1/ /var/www/html/
+
+EXPOSE 80
