@@ -21,10 +21,22 @@
 * Create a basic HTML file to replace the old "index.html" file that apache2 makes in "/var/www/html"
 ![simpleHTML](Pictures/simpleHTML.jpg)
 ----------------------------------
-5. Pull an image
+5. Pull an image and build.
 * From what I know about building an image, you usually need some type of base to lay the rest
   on. This is usually a OS like Ubuntu or a different flavor, but we are going to use "httpd".
   ![dockerPull](Pictures/dockerPull.jpg)
-* Now the DOCKERFILE. The dockerfile is basically a list of commands that will build the image
+* Now the DOCKERFILE. . .The dockerfile is basically a list of commands that will build the image
   of whatever you need the container to do. It can look like the one below:
   ![dockerfile](Pictures/dockerfile.jpg)
+* I am using Apache2 so I needed to move the index.html file to index.html.old, and in my dockerfile it
+  should copy the web1.html into "/var/www/html/" after installing Apache2.
+* Below is the readout:
+![dockerBuild](Pictures/dockerBuild.jpg)
+----------------------------------
+6. Run the container.
+* After a successful build, use the "sudo docker image ls" to verify that the image is actually there.
+![dockerImageRepo](Pictures/dockerImageRepo.jpg)
+* Now that it is verified, we can test to see if the image actually does what we need it to do.
+* I had issues trying to run the command below due to login issues with Docker, so I went ahead and 
+  logged in using "sudo docker login", input my username and password, then ran the command below.
+  Using "sudo docker run -d -p 80:80 web1"
