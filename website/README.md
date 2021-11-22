@@ -23,7 +23,8 @@
 ----------------------------------
 5. Pull an image
 * From what I know about building an image, you usually need some type of base to lay the rest
-  on. This is usually a OS like Ubuntu or a different flavor,
+  on. This is usually a OS like Ubuntu or a different flavor, but we are going to use "httpd".
   ![dockerPull](Pictures/dockerPull.jpg)
 * Now the DOCKERFILE. The dockerfile is basically a list of commands that will build the image
-  of whatever you need the container to do.
+  of whatever you need the container to do. It can look like the one below:
+  ![dockerfile](Pictures/dockerfile.jpg)
