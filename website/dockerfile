@@ -1,6 +1,6 @@
 FROM httpd:2.4
 
-cRUN apt-get update && apt-get install -y apache2
+RUN apt-get update && apt-get install -y apache2
 
 COPY ./web1.html /usr/local/apache2/htdocs/
 
